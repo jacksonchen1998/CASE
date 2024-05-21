@@ -1092,7 +1092,7 @@ class CASE(nn.Module):
             str_loss.item() if self.dataset=="ESConv" else 0,
             strategy_acc.item() if self.dataset=="ESConv" else 0,
             emotion_loss.item() if self.dataset=="ED" else 0,
-            emotion_acc.item() if self.dataset=="ED" else 0
+            emotion_acc if self.dataset=="ED" else 0
         )
     
     def decoder_greedy(self, batch, max_dec_step=30):
